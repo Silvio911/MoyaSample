@@ -1,2 +1,2 @@
 # MoyaSample
-This is an iOS application example written in Swift using Moya networking library.
+This is an example written in Swift using Moya networking library.
