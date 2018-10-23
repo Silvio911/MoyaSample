@@ -11,18 +11,16 @@ import Moya
 
 enum State {
     case success
-    case loading
     case error
 }
 
-class PostsViewController: UIViewController {
-
+class GetPostsViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     
     let provider = MoyaProvider<NetworkService>()
     
     var dataArray: [Post] = []
-    
     var viewState = State.success
     
     override func viewDidLoad() {
@@ -36,10 +34,9 @@ class PostsViewController: UIViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
-
+    
     func getPosts(){
         provider.request(.posts) { result in
-            self.viewState = .loading
             switch result {
             case .success(let response):
                 do {
@@ -48,7 +45,7 @@ class PostsViewController: UIViewController {
                     let decodedPosts = try JSONDecoder().decode([Post].self, from: json)
                     decodedPosts.forEach{print($0)}
                     
-                    self.dataArray = decodedPosts
+                    self.dataArray.append(contentsOf: decodedPosts)
                     self.viewState = .success
                 } catch {
                     print(error)
@@ -61,10 +58,10 @@ class PostsViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
-
+    
 }
 
-extension PostsViewController: UITableViewDelegate {
+extension GetPostsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
@@ -76,7 +73,7 @@ extension PostsViewController: UITableViewDelegate {
     
 }
 
-extension PostsViewController: UITableViewDataSource {
+extension GetPostsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -91,13 +88,8 @@ extension PostsViewController: UITableViewDataSource {
         
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         guard viewState == .success else {
-            if viewState == .loading {
-                cell.textLabel?.text = "Loading..."
-                cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-            }else{
-                cell.textLabel?.text = "Error"
-                cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-            }
+            cell.textLabel?.text = "Error"
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
             return cell
         }
         let model = dataArray[indexPath.row]

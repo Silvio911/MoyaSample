@@ -11,6 +11,7 @@ import Moya
 
 enum NetworkService {
     case posts
+    case createPost(id:Int, userId:Int, title: String, body:String)
 }
 
 extension NetworkService: TargetType {
@@ -21,7 +22,7 @@ extension NetworkService: TargetType {
     
     public var path: String {
         switch self {
-        case .posts :
+        case .posts, .createPost(_ ,_ ,_ ,_) :
             return "/posts"
         }
     }
@@ -30,6 +31,8 @@ extension NetworkService: TargetType {
         switch self {
         case .posts:
             return .get
+        case .createPost(_ ,_ ,_ ,_):
+            return .post
         }
     }
     
@@ -38,10 +41,12 @@ extension NetworkService: TargetType {
     }
     
     public var task: Task {
-        //MARK:- If request has parametrs(multipart etc...) add those here.
-        //return .requestParameters(parameters: ["name": name], encoding: JSONEncoding.default)
-        
-        return .requestPlain
+        switch self {
+        case .posts:
+            return .requestPlain
+        case .createPost(let id, let userId, let title, let body):
+            return .requestParameters(parameters: ["id": id, "userId": userId, "title": title, "body": body], encoding: JSONEncoding.default)
+        }
     }
     
     public var headers: [String : String]? {

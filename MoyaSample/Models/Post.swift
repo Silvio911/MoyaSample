@@ -10,10 +10,10 @@ import Foundation
 
 struct Post: Codable{
     
-    let userId: Int
-    let id: Int
-    let title: String
-    let body: String
+    var userId: Int
+    var id: Int
+    var title: String
+    var body: String
     
     //MARK:- Can use CodableKeys if the var names are not same.
     
