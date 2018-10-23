@@ -33,7 +33,7 @@ class CreatePostViewController: UIViewController {
         postCreated.userId = 101
         postCreated.title = titleTextField.text ?? ""
         postCreated.body = bodyTextField.text ?? ""
-        
+    
         provider.request(.createPost(id: postCreated.id, userId: postCreated.userId, title: postCreated.title, body: postCreated.body)) { (result) in
             switch result {
             case .success(let response):
