@@ -15,16 +15,19 @@ class CreatePostViewController: UIViewController {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextField: UITextField!
+    var addButtonItem = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Post"
         
-        let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createNewPost))
+        addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createNewPost))
         navigationItem.rightBarButtonItem = addButtonItem
     }
     
     @objc func createNewPost(){
+        addButtonItem.isEnabled = false
+        
         var postCreated = Post()
         postCreated.id = 101
         postCreated.userId = 101
@@ -43,6 +46,7 @@ class CreatePostViewController: UIViewController {
             case .failure(let error):
                 print(error)
             }
+            self.addButtonItem.isEnabled = true
         }
     }
     

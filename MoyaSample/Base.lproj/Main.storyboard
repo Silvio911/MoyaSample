@@ -139,7 +139,7 @@
         <!--Create Post View Controller-->
         <scene sceneID="Kyy-Z6-ytl">
             <objects>
-                <viewController id="iPM-JE-EPN" customClass="CreatePostViewController" customModule="MoyaSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreatePostViewController" id="iPM-JE-EPN" customClass="CreatePostViewController" customModule="MoyaSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V6d-ib-29V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

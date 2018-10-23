@@ -58,6 +58,7 @@ class GetPostsViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+   
     
 }
 
@@ -99,5 +100,5 @@ extension GetPostsViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = model.body
         return cell
     }
-    
+   
 }
