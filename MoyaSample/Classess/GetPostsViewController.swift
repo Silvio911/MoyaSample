@@ -35,6 +35,8 @@ class GetPostsViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
+    //MARK:- GET.
+
     func getPosts(){
         provider.request(.posts) { result in
             switch result {
@@ -99,6 +101,26 @@ extension GetPostsViewController: UITableViewDataSource {
         cell.textLabel?.text = "\(model.id). \(model.title)"
         cell.detailTextLabel?.text = model.body
         return cell
+    }
+    
+    //MARK:- DELETE.
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        
+        let post = dataArray[indexPath.row]
+        
+        provider.request(.deletePost(id: post.id)) { (result) in
+            switch result {
+            case .success(let response):
+                print("Delete: \(response)")
+                self.dataArray.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        
     }
    
 }

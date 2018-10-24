@@ -25,9 +25,10 @@ class CreatePostViewController: UIViewController {
         navigationItem.rightBarButtonItem = addButtonItem
     }
     
+    //MARK:- POST.
+
     @objc func createNewPost(){
         addButtonItem.isEnabled = false
-        
         var postCreated = Post()
         postCreated.id = 101
         postCreated.userId = 101
@@ -49,7 +50,5 @@ class CreatePostViewController: UIViewController {
             self.addButtonItem.isEnabled = true
         }
     }
-    
-    
     
 }

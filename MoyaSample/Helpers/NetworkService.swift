@@ -12,6 +12,7 @@ import Moya
 enum NetworkService {
     case posts
     case createPost(id:Int, userId:Int, title: String, body:String)
+    case deletePost(id: Int)
 }
 
 extension NetworkService: TargetType {
@@ -22,8 +23,10 @@ extension NetworkService: TargetType {
     
     public var path: String {
         switch self {
-        case .posts, .createPost(_ ,_ ,_ ,_) :
+        case .posts, .createPost(_ ,_ ,_ ,_):
             return "/posts"
+        case .deletePost(let id):
+            return "posts/\(id)"
         }
     }
     
@@ -33,6 +36,8 @@ extension NetworkService: TargetType {
             return .get
         case .createPost(_ ,_ ,_ ,_):
             return .post
+        case .deletePost(_):
+            return .delete
         }
     }
     
@@ -46,6 +51,8 @@ extension NetworkService: TargetType {
             return .requestPlain
         case .createPost(let id, let userId, let title, let body):
             return .requestParameters(parameters: ["id": id, "userId": userId, "title": title, "body": body], encoding: JSONEncoding.default)
+        case .deletePost(let id):
+            return .requestParameters(parameters: ["id":id], encoding: JSONEncoding.default)
         }
     }
     
