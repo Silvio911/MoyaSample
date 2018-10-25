@@ -88,7 +88,6 @@ extension GetPostsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         guard viewState == .success else {
             cell.textLabel?.text = "Error"
@@ -103,10 +102,29 @@ extension GetPostsViewController: UITableViewDataSource {
         return cell
     }
     
+    //MARK:- UPDATE.
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard dataArray.count > 1 else { return }
+        let post = dataArray[indexPath.row]
+        provider.request(.updatePost(id: post.id, title: "[Modified] " + post.title)) { (result) in
+            switch result {
+            case .success(let response):
+                if let modifiedPost = try! JSONSerialization.jsonObject(with: response.data, options: .allowFragments) as? [String:Any] {
+                    self.dataArray[indexPath.row].title = modifiedPost["title"] as! String
+                }
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+
+    }
+    
     //MARK:- DELETE.
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
-        
         let post = dataArray[indexPath.row]
         
         provider.request(.deletePost(id: post.id)) { (result) in
@@ -119,8 +137,6 @@ extension GetPostsViewController: UITableViewDataSource {
                 print(error)
             }
         }
-        
-        
     }
    
 }

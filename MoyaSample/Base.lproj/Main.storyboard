@@ -122,7 +122,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ezN-g5-RKm" secondAttribute="trailing" id="qwh-k4-P7F"/>
                             <constraint firstItem="ezN-g5-RKm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rCS-Gs-BSc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ezN-g5-RKm" secondAttribute="bottom" id="rYb-qO-lWv"/>
+                            <constraint firstAttribute="bottom" secondItem="ezN-g5-RKm" secondAttribute="bottom" id="rYb-qO-lWv"/>
                             <constraint firstItem="ezN-g5-RKm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wGh-Uo-Uyt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
