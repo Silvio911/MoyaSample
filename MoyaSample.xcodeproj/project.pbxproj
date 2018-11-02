@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5784DDBA217F7C2400C9E21A /* GetPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784DDB7217F7C2400C9E21A /* GetPostsViewController.swift */; };
+		5784DDBB217F7C2400C9E21A /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784DDB8217F7C2400C9E21A /* CreatePostViewController.swift */; };
+		5784DDBC217F7C2400C9E21A /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5784DDB9217F7C2400C9E21A /* DashboardTableViewController.swift */; };
 		578F5FF92178927800E79C1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F5FF82178927800E79C1A /* AppDelegate.swift */; };
 		578F5FFE2178927800E79C1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578F5FFC2178927800E79C1A /* Main.storyboard */; };
 		578F60002178927900E79C1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 578F5FFF2178927900E79C1A /* Assets.xcassets */; };
 		578F60032178927900E79C1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578F60012178927900E79C1A /* LaunchScreen.storyboard */; };
 		578F60102178CFB300E79C1A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F600F2178CFB300E79C1A /* NetworkService.swift */; };
 		578F60122178D2B900E79C1A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F60112178D2B900E79C1A /* Post.swift */; };
-		578F60142178D8BB00E79C1A /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F60132178D8BB00E79C1A /* PostsViewController.swift */; };
+		57BBABF3218C51BB009A862D /* Imgur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BBABF2218C51BB009A862D /* Imgur.swift */; };
+		57BBABF5218C639B009A862D /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BBABF4218C639B009A862D /* UploadViewController.swift */; };
 		E21FD3438BBD6590C3C97328 /* Pods_MoyaSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592FAB41BBAC67C1EE174725 /* Pods_MoyaSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02F6E934D6BBC7CE0E9FEA24 /* Pods-MoyaSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoyaSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoyaSample/Pods-MoyaSample.debug.xcconfig"; sourceTree = "<group>"; };
+		5784DDB7217F7C2400C9E21A /* GetPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPostsViewController.swift; sourceTree = "<group>"; };
+		5784DDB8217F7C2400C9E21A /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		5784DDB9217F7C2400C9E21A /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		578F5FF52178927800E79C1A /* MoyaSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoyaSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		578F5FF82178927800E79C1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		578F5FFD2178927800E79C1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -27,7 +34,8 @@
 		578F60042178927900E79C1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		578F600F2178CFB300E79C1A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		578F60112178D2B900E79C1A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		578F60132178D8BB00E79C1A /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		57BBABF2218C51BB009A862D /* Imgur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imgur.swift; sourceTree = "<group>"; };
+		57BBABF4218C639B009A862D /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		592FAB41BBAC67C1EE174725 /* Pods_MoyaSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoyaSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF565463166B2AFA11A8083 /* Pods-MoyaSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoyaSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoyaSample/Pods-MoyaSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,10 +77,8 @@
 				578F600A2178951900E79C1A /* Classess */,
 				578F600C2178951A00E79C1A /* Helpers */,
 				578F600B2178951900E79C1A /* Models */,
-				578F5FFC2178927800E79C1A /* Main.storyboard */,
-				578F5FFF2178927900E79C1A /* Assets.xcassets */,
-				578F60012178927900E79C1A /* LaunchScreen.storyboard */,
-				578F60042178927900E79C1A /* Info.plist */,
+				57BBABF6218C640F009A862D /* Views */,
+				57BBABF7218C641B009A862D /* Resources */,
 			);
 			path = MoyaSample;
 			sourceTree = "<group>";
@@ -80,7 +86,10 @@
 		578F600A2178951900E79C1A /* Classess */ = {
 			isa = PBXGroup;
 			children = (
-				578F60132178D8BB00E79C1A /* PostsViewController.swift */,
+				5784DDB9217F7C2400C9E21A /* DashboardTableViewController.swift */,
+				5784DDB8217F7C2400C9E21A /* CreatePostViewController.swift */,
+				5784DDB7217F7C2400C9E21A /* GetPostsViewController.swift */,
+				57BBABF4218C639B009A862D /* UploadViewController.swift */,
 			);
 			path = Classess;
 			sourceTree = "<group>";
@@ -97,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				578F600F2178CFB300E79C1A /* NetworkService.swift */,
+				57BBABF2218C51BB009A862D /* Imgur.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -107,6 +117,24 @@
 				578F5FF82178927800E79C1A /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		57BBABF6218C640F009A862D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				578F5FFC2178927800E79C1A /* Main.storyboard */,
+				578F60012178927900E79C1A /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57BBABF7218C641B009A862D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				578F5FFF2178927900E79C1A /* Assets.xcassets */,
+				578F60042178927900E79C1A /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		90C9163C06804A7625EA77FC /* Pods */ = {
@@ -242,10 +270,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				578F60142178D8BB00E79C1A /* PostsViewController.swift in Sources */,
+				5784DDBB217F7C2400C9E21A /* CreatePostViewController.swift in Sources */,
+				57BBABF5218C639B009A862D /* UploadViewController.swift in Sources */,
 				578F60102178CFB300E79C1A /* NetworkService.swift in Sources */,
 				578F5FF92178927800E79C1A /* AppDelegate.swift in Sources */,
 				578F60122178D2B900E79C1A /* Post.swift in Sources */,
+				57BBABF3218C51BB009A862D /* Imgur.swift in Sources */,
+				5784DDBC217F7C2400C9E21A /* DashboardTableViewController.swift in Sources */,
+				5784DDBA217F7C2400C9E21A /* GetPostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H283372B6R;
-				INFOPLIST_FILE = MoyaSample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MoyaSample/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,7 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H283372B6R;
-				INFOPLIST_FILE = MoyaSample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MoyaSample/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -60,6 +60,26 @@
                                             <segue destination="iPM-JE-EPN" kind="show" identifier="post" id="FqT-Ep-OhS"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="tet-da-Z99" style="IBUITableViewCellStyleDefault" id="Vdu-JG-B1T">
+                                        <rect key="frame" x="0.0" y="116" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vdu-JG-B1T" id="KqU-Ok-Z8g">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Upload (Multipart)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tet-da-Z99">
+                                                    <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="2QJ-bC-qJh" kind="show" id="LmD-en-IZm"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -134,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1329" y="-398"/>
+            <point key="canvasLocation" x="1403" y="-766"/>
         </scene>
         <!--Create Post View Controller-->
         <scene sceneID="Kyy-Z6-ytl">
@@ -210,7 +230,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHI-II-IkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1328" y="399"/>
+            <point key="canvasLocation" x="1404" y="5"/>
+        </scene>
+        <!--Upload View Controller-->
+        <scene sceneID="oJb-xc-ZlF">
+            <objects>
+                <viewController id="2QJ-bC-qJh" customClass="UploadViewController" customModule="MoyaSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6AL-gZ-kbP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_moya" translatesAutoresizingMaskIntoConstraints="NO" id="cEq-uc-cJk">
+                                <rect key="frame" x="47.5" y="128" width="225" height="224"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQL-YQ-T4T">
+                                <rect key="frame" x="100" y="424" width="120" height="40"/>
+                                <color key="backgroundColor" red="0.37120572372349958" green="0.37488102791878175" blue="0.37488102791878175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GQt-cy-OOc"/>
+                                    <constraint firstAttribute="width" constant="120" id="WxU-zl-C6k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cEq-uc-cJk" firstAttribute="centerY" secondItem="6AL-gZ-kbP" secondAttribute="centerY" id="3rr-IH-w82"/>
+                            <constraint firstItem="zQL-YQ-T4T" firstAttribute="centerX" secondItem="T28-HI-8bR" secondAttribute="centerX" id="Q1w-la-MWD"/>
+                            <constraint firstItem="T28-HI-8bR" firstAttribute="bottom" secondItem="zQL-YQ-T4T" secondAttribute="bottom" constant="16" id="TjH-pA-cXa"/>
+                            <constraint firstItem="cEq-uc-cJk" firstAttribute="centerX" secondItem="6AL-gZ-kbP" secondAttribute="centerX" id="TnW-bZ-ILb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T28-HI-8bR"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="cEq-uc-cJk" id="fa3-6l-NQk"/>
+                        <outlet property="uploadButton" destination="zQL-YQ-T4T" id="CGx-oZ-tqP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m43-O2-yeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1403" y="714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B7w-tN-DuH">
@@ -231,4 +293,7 @@
             <point key="canvasLocation" x="-223" y="5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_moya" width="225" height="224"/>
+    </resources>
 </document>
